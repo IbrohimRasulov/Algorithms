@@ -26,4 +26,4 @@ const gridTraveler_2 = (m, n, memo = {}) => {
   return memo[key];
 };
 
-console.log(gridTraveler_2(22, 13)); // fast!
+// console.log(gridTraveler_2(22, 13)); // fast!

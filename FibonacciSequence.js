@@ -9,9 +9,9 @@ const fib_1 = (n) => {
   return fib_1(n - 1) + fib_1(n - 2);
 };
 
-// fib_1(6)
-// fib_1(8)
-// fib_1(50)
+// console.log(fib_1(6))
+// console.log(fib_1(8))
+// console.log(fib_1(50))
 
 //! Advanced solution with memoization, and much faster result
 const fib_2 = (n, memo = {}) => {
@@ -22,6 +22,6 @@ const fib_2 = (n, memo = {}) => {
   return memo[n];
 };
 
-// fib_2(6)
-// fib_2(8)
-// fib_2(50)
+// console.log(fib_2(6))
+// console.log(fib_2(8))
+// console.log(fib_2(50))
