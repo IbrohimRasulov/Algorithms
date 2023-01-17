@@ -1,8 +1,6 @@
-// Base cases:
-// gridTraveler(m,1) => 1
-// gridTraveler(1,n) => 1
-// gridTraveler(m,0) => 0
-// gridTraveler(0,n) => 0
+//? Base cases:
+//? targetSum = 0 => true
+//? targetSum < 0 => false
 
 //! Easy solution, but slow result
 const howSum = (targetSum, numbers) => {
@@ -11,10 +9,12 @@ const howSum = (targetSum, numbers) => {
 
   for (let num of numbers) {
     const remainder = targetSum - num;
+
     const index = numbers.indexOf(num);
-    const newNumbers = [...numbers];
-	  newNumbers.splice(index, 1);
-    const remainderResult = howSum(remainder, newNumbers);
+    const filteredNumbers = [...numbers];
+    filteredNumbers.splice(index, 1);
+
+    const remainderResult = howSum(remainder, filteredNumbers);
 
     if (remainderResult !== null) return [num, ...remainderResult];
   }

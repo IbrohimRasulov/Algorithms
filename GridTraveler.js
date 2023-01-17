@@ -1,8 +1,8 @@
-// Base cases:
-// gridTraveler(m,1) => 1
-// gridTraveler(1,n) => 1
-// gridTraveler(m,0) => 0
-// gridTraveler(0,n) => 0
+//? Base cases:
+//? gridTraveler(m,1) => 1
+//? gridTraveler(1,n) => 1
+//? gridTraveler(m,0) => 0
+//? gridTraveler(0,n) => 0
 
 //! Easy solution, but slow result
 const gridTraveler_1 = (m, n) => {
