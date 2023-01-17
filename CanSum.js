@@ -7,9 +7,11 @@ const canSum_1 = (targetSum, numbers) => {
   if (targetSum === 0) return true;
   if (targetSum < 0) return false;
 
-  for (let n of numbers) {
-    const remainder = targetSum - n;
-    const newNumbers = numbers.filter((x) => x !== n);
+  for (let num of numbers) {
+    const remainder = targetSum - num;
+    const index = numbers.indexOf(num);
+    const newNumbers = numbers.splice(index, 1);
+
     if (canSum_1(remainder, newNumbers)) return true;
   }
 
@@ -30,22 +32,23 @@ const canSum_2 = (targetSum, numbers, memo = {}) => {
   if (targetSum === 0) return true;
   if (targetSum < 0) return false;
 
-  const key = `${targetSum} [${numbers}]`
-  if (key in memo) return memo[key]
+  const key = `${targetSum} [${numbers}]`;
+  if (key in memo) return memo[key];
 
-  for (let n of numbers) {
-    const remainder = targetSum - n;
-    const newNumbers = numbers.filter((x) => x !== n);
+  for (let num of numbers) {
+    const remainder = targetSum - num;
+    const index = numbers.indexOf(num);
+    const newNumbers = numbers.splice(index, 1);
 
     if (canSum_2(remainder, newNumbers, memo)) {
-      memo[key] = true
+      memo[key] = true;
       return true;
     }
   }
 
-  memo[key] = false
+  memo[key] = false;
   return false;
-}
+};
 
 // console.log(canSum_2(9, [0, 1, 3, 4, 7, 10])); // false
 // console.log(canSum_2(4, [1, 2, 3, 4, 5, 6]));  // true
