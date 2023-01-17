@@ -7,7 +7,7 @@ const canSum_1 = (targetSum, numbers) => {
   if (targetSum === 0) return true;
   if (targetSum < 0) return false;
 
-  for (n of numbers) {
+  for (let n of numbers) {
     const remainder = targetSum - n;
     const newNumbers = numbers.filter((x) => x !== n);
     if (canSum_1(remainder, newNumbers)) return true;
@@ -33,7 +33,7 @@ const canSum_2 = (targetSum, numbers, memo = {}) => {
   const key = `${targetSum} [${numbers}]`
   if (key in memo) return memo[key]
 
-  for (n of numbers) {
+  for (let n of numbers) {
     const remainder = targetSum - n;
     const newNumbers = numbers.filter((x) => x !== n);
 
