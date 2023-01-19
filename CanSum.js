@@ -10,7 +10,8 @@ const canSum_1 = (targetSum, numbers) => {
   for (let num of numbers) {
     const remainder = targetSum - num;
     const index = numbers.indexOf(num);
-    const newNumbers = numbers.splice(index, 1);
+    const newNumbers = [...numbers];
+    newNumbers.splice(index, 1);
 
     if (canSum_1(remainder, newNumbers)) return true;
   }
@@ -37,7 +38,8 @@ const canSum_2 = (targetSum, numbers, memo = {}) => {
   for (let num of numbers) {
     const remainder = targetSum - num;
     const index = numbers.indexOf(num);
-    const newNumbers = numbers.splice(index, 1);
+    const newNumbers = [...numbers];
+    newNumbers.splice(index, 1);
 
     if (canSum_2(remainder, newNumbers, memo)) {
       memo[key] = true;

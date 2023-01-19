@@ -26,7 +26,7 @@ const howSum_1 = (targetSum, numbers) => {
 // console.log(howSum_1(4, [1, 2, 5, 10]));
 // console.log(howSum_1(7, [5, 3, 7, 4]));
 //# Result takes about 15 seconds or more
-console.log(howSum_1(100, [1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 1]));
+// console.log(howSum_1(100, [1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 1]));
 
 //! Advanced solution with memoization, and much faster result
 const howSum_2 = (targetSum, numbers, memo = {}) => {
