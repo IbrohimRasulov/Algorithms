@@ -45,7 +45,9 @@ const howSum_2 = (targetSum, numbers, memo = {}) => {
 
     const remainderResult = howSum_2(remainder, filteredNumbers, memo);
 
-    if (remainderResult !== null) return [num, ...remainderResult];
+    if (remainderResult !== null) {
+      return [num, ...remainderResult];
+    }
   }
 
   memo[key] = null;
