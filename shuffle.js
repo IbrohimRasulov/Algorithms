@@ -7,4 +7,4 @@ const shuffle = (array) => {
   return shuffledArray
 }
 
-console.log(shuffle([1,2,3,4,5]))
+console.log(shuffle([1, 2, 3, 4, 5]))
